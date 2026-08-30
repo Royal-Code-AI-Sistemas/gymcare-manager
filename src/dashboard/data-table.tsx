@@ -103,12 +103,12 @@ export function DataTable<T>({
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b text-left text-xs uppercase text-muted-foreground">
+                <tr className="border-b bg-[#F7F8F9] text-left text-xs text-[#6B7075]">
                   {columns.map((col) => (
                     <th
                       key={col.key}
                       className={cn(
-                        'px-3 py-2 font-medium',
+                        'px-4 py-2.5 font-medium',
                         alignClasses[col.align ?? 'left'],
                         col.className,
                       )}
@@ -124,7 +124,7 @@ export function DataTable<T>({
                     key={i}
                     onClick={onRowClick ? () => onRowClick(row) : undefined}
                     className={cn(
-                      'border-b hover:bg-muted/50',
+                      'border-b border-[#F0F1F2] last:border-b-0 hover:bg-[#FAFBFB]',
                       onRowClick && 'cursor-pointer',
                     )}
                   >
@@ -132,7 +132,7 @@ export function DataTable<T>({
                       <td
                         key={col.key}
                         className={cn(
-                          'px-3 py-2',
+                          'px-4 py-2.5',
                           alignClasses[col.align ?? 'left'],
                           col.className,
                         )}

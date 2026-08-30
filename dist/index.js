@@ -1859,7 +1859,7 @@ function it({ className: e, variant: t, size: n, asChild: r = !1, ...i }) {
 //#region src/ui/card.tsx
 var at = e.forwardRef(({ className: e, ...t }, n) => /* @__PURE__ */ o("div", {
 	ref: n,
-	className: Q("rounded-xl border bg-card text-card-foreground shadow", e),
+	className: Q("rounded-xl border bg-card text-card-foreground", e),
 	...t
 }));
 at.displayName = "Card";
@@ -2618,16 +2618,16 @@ function er({ columns: t, data: n, searchable: r = !1, searchKeys: i, searchPlac
 			children: /* @__PURE__ */ s("table", {
 				className: "w-full text-sm",
 				children: [/* @__PURE__ */ o("thead", { children: /* @__PURE__ */ o("tr", {
-					className: "border-b text-left text-xs uppercase text-muted-foreground",
+					className: "border-b bg-[#F7F8F9] text-left text-xs text-[#6B7075]",
 					children: t.map((e) => /* @__PURE__ */ o("th", {
-						className: Q("px-3 py-2 font-medium", $n[e.align ?? "left"], e.className),
+						className: Q("px-4 py-2.5 font-medium", $n[e.align ?? "left"], e.className),
 						children: e.header
 					}, e.key))
 				}) }), /* @__PURE__ */ o("tbody", { children: b.map((e, n) => /* @__PURE__ */ o("tr", {
 					onClick: u ? () => u(e) : void 0,
-					className: Q("border-b hover:bg-muted/50", u && "cursor-pointer"),
+					className: Q("border-b border-[#F0F1F2] last:border-b-0 hover:bg-[#FAFBFB]", u && "cursor-pointer"),
 					children: t.map((t) => /* @__PURE__ */ o("td", {
-						className: Q("px-3 py-2", $n[t.align ?? "left"], t.className),
+						className: Q("px-4 py-2.5", $n[t.align ?? "left"], t.className),
 						children: t.accessor ? t.accessor(e) : String(e[t.key] ?? "")
 					}, t.key))
 				}, n)) })]
