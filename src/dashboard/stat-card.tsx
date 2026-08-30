@@ -9,20 +9,33 @@ import {
   CardTitle,
 } from '../ui/card'
 
+export type StatTone = 'blue' | 'lime' | 'purple' | 'green' | 'amber'
+
 export interface StatCardProps {
   title: string
   value: React.ReactNode
   icon?: React.ComponentType<{ className?: string }>
+  /** Cor do chip do ícone — dá vida aos cards (paleta do design system). */
+  tone?: StatTone
   trend?: { value: string; positive?: boolean }
   description?: string
   footer?: React.ReactNode
   className?: string
 }
 
+const toneChip: Record<StatTone, string> = {
+  blue: 'bg-[#3168A9]/10 text-[#3168A9]',
+  lime: 'bg-[#D5FE4C] text-[#14210A]',
+  purple: 'bg-[#8142E5]/10 text-[#8142E5]',
+  green: 'bg-[#06E785]/15 text-[#047857]',
+  amber: 'bg-[#D97706]/10 text-[#D97706]',
+}
+
 export function StatCard({
   title,
   value,
   icon: Icon,
+  tone = 'blue',
   trend,
   description,
   footer,
@@ -35,7 +48,7 @@ export function StatCard({
           {title}
         </CardTitle>
         {Icon && (
-          <div className="rounded-lg bg-[#3168A9]/10 p-2 text-[#3168A9]">
+          <div className={cn('rounded-lg p-2', toneChip[tone])}>
             <Icon className="h-4 w-4" />
           </div>
         )}
