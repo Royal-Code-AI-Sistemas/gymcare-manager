@@ -11,11 +11,11 @@ export interface StatusBadgeProps {
 }
 
 const toneClasses: Record<StatusTone, string> = {
-  success: 'bg-success/15 text-success',
-  warning: 'bg-warning/15 text-amber-700 dark:text-amber-300',
-  error: 'bg-destructive/15 text-red-700 dark:text-red-300',
-  info: 'bg-blue-500/15 text-blue-700 dark:text-blue-300',
-  neutral: 'bg-muted text-muted-foreground',
+  success: 'bg-[#06E785] text-[#00301B]',
+  warning: 'bg-[#FFF3C4] text-[#6B4E00]',
+  error: 'bg-[#FDE2E1] text-[#B42318]',
+  info: 'bg-[#DFEBF8] text-[#27568C]',
+  neutral: 'bg-[#EDEFF1] text-[#3D4145]',
 }
 
 export function StatusBadge({
@@ -27,7 +27,7 @@ export function StatusBadge({
   return (
     <span
       className={cn(
-        'inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium',
+        'inline-flex items-center gap-1.5 rounded-md px-2 py-0.5 text-[10px] font-black',
         toneClasses[tone],
         className,
       )}

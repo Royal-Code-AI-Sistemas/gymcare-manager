@@ -3,19 +3,19 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '../lib/utils'
 
 const badgeVariants = cva(
-  'inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+  'inline-flex items-center rounded-md px-2 py-0.5 text-[10px] font-black transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
   {
     variants: {
       variant: {
-        default: 'border-transparent bg-primary text-primary-foreground shadow',
-        secondary: 'border-transparent bg-secondary text-secondary-foreground',
-        destructive:
-          'border-transparent bg-destructive text-destructive-foreground shadow',
-        outline: 'text-foreground',
-        success: 'border-transparent bg-success text-success-foreground',
-        warning: 'border-transparent bg-warning text-warning-foreground',
-        error: 'border-transparent bg-destructive text-destructive-foreground',
-        info: 'border-transparent bg-blue-500 text-white',
+        default: 'bg-[#EDEFF1] text-[#3D4145]',
+        secondary: 'bg-[#EDEFF1] text-[#3D4145]',
+        destructive: 'bg-[#FDE2E1] text-[#B42318]',
+        outline: 'border border-[#D7DBDE] text-[#3D4145]',
+        success: 'bg-[#06E785] text-[#00301B]',
+        warning: 'bg-[#FFF3C4] text-[#6B4E00]',
+        error: 'bg-[#FDE2E1] text-[#B42318]',
+        info: 'bg-[#DFEBF8] text-[#27568C]',
+        primary: 'bg-[#3168A9] text-white',
       },
     },
     defaultVariants: {

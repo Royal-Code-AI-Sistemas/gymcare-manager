@@ -56,10 +56,10 @@ export function Pagination({
               key={item}
               onClick={() => onChange(item)}
               className={cn(
-                'h-9 w-9 rounded-md border text-sm transition-colors',
+                'size-9 rounded-lg border border-[#D7DBDE] text-[13px] font-bold transition-colors',
                 item === page
-                  ? 'border-primary bg-primary text-primary-foreground'
-                  : 'hover:bg-muted',
+                  ? 'border-black bg-black text-white'
+                  : 'bg-white hover:bg-[#EDEFF1]',
               )}
             >
               {item}

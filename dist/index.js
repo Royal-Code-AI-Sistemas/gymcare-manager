@@ -1802,16 +1802,17 @@ var et = e.forwardRef(({ className: e, ...t }, n) => /* @__PURE__ */ o("div", {
 et.displayName = "AlertDescription";
 //#endregion
 //#region src/ui/badge.tsx
-var tt = b("inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2", {
+var tt = b("inline-flex items-center rounded-md px-2 py-0.5 text-[10px] font-black transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2", {
 	variants: { variant: {
-		default: "border-transparent bg-primary text-primary-foreground shadow",
-		secondary: "border-transparent bg-secondary text-secondary-foreground",
-		destructive: "border-transparent bg-destructive text-destructive-foreground shadow",
-		outline: "text-foreground",
-		success: "border-transparent bg-success text-success-foreground",
-		warning: "border-transparent bg-warning text-warning-foreground",
-		error: "border-transparent bg-destructive text-destructive-foreground",
-		info: "border-transparent bg-blue-500 text-white"
+		default: "bg-[#EDEFF1] text-[#3D4145]",
+		secondary: "bg-[#EDEFF1] text-[#3D4145]",
+		destructive: "bg-[#FDE2E1] text-[#B42318]",
+		outline: "border border-[#D7DBDE] text-[#3D4145]",
+		success: "bg-[#06E785] text-[#00301B]",
+		warning: "bg-[#FFF3C4] text-[#6B4E00]",
+		error: "bg-[#FDE2E1] text-[#B42318]",
+		info: "bg-[#DFEBF8] text-[#27568C]",
+		primary: "bg-[#3168A9] text-white"
 	} },
 	defaultVariants: { variant: "default" }
 });
@@ -1823,21 +1824,23 @@ function nt({ className: e, variant: t, ...n }) {
 }
 //#endregion
 //#region src/ui/button.tsx
-var rt = b("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0", {
+var rt = b("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-[13px] font-bold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0", {
 	variants: {
 		variant: {
-			default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
-			destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
-			outline: "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-			secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-			ghost: "hover:bg-accent hover:text-accent-foreground",
-			link: "text-primary underline-offset-4 hover:underline"
+			default: "border border-[#D7DBDE] bg-white text-[#111] hover:bg-[#F4F5F6]",
+			lime: "bg-[#D5FE4C] font-black text-black hover:bg-[#c6f231]",
+			primary: "bg-[#3168A9] text-white hover:bg-[#27568C]",
+			outline: "border border-black bg-transparent text-black hover:bg-black hover:text-white",
+			destructive: "bg-[#FDE2E1] text-[#B42318] hover:bg-[#F8C9C6]",
+			secondary: "bg-[#EDEFF1] text-[#3D4145] hover:bg-[#E4E6E8]",
+			ghost: "bg-transparent text-[#3D4145] hover:bg-[#EDEFF1]",
+			link: "text-[#3168A9] underline-offset-4 hover:underline"
 		},
 		size: {
-			default: "h-9 px-4 py-2",
-			sm: "h-8 rounded-md px-3 text-xs",
-			lg: "h-10 rounded-md px-8",
-			icon: "h-9 w-9"
+			default: "px-3.5 py-2",
+			sm: "px-2.5 py-1.5",
+			lg: "px-4.5 py-3 font-black",
+			icon: "size-9 p-0"
 		}
 	},
 	defaultVariants: {
@@ -1865,7 +1868,7 @@ var at = e.forwardRef(({ className: e, ...t }, n) => /* @__PURE__ */ o("div", {
 at.displayName = "Card";
 var ot = e.forwardRef(({ className: e, ...t }, n) => /* @__PURE__ */ o("div", {
 	ref: n,
-	className: Q("flex flex-col space-y-1.5 p-6", e),
+	className: Q("flex flex-col space-y-1.5 p-5", e),
 	...t
 }));
 ot.displayName = "CardHeader";
@@ -2005,7 +2008,7 @@ var dt = (...e) => e.filter((e, t, n) => !!e && e.trim() !== "" && n.indexOf(e) 
 It.displayName = l.Overlay.displayName;
 var Lt = e.forwardRef(({ className: e, children: t, ...n }, r) => /* @__PURE__ */ s(Pt, { children: [/* @__PURE__ */ o(It, {}), /* @__PURE__ */ s(l.Content, {
 	ref: r,
-	className: Q("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] sm:rounded-lg", e),
+	className: Q("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-[#E4E6E8] bg-card p-6 duration-200 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] sm:rounded-xl", e),
 	...n,
 	children: [t, /* @__PURE__ */ s(l.Close, {
 		className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground",
@@ -2108,7 +2111,7 @@ nn.displayName = "DropdownMenuShortcut";
 //#region src/ui/input.tsx
 var rn = e.forwardRef(({ className: e, type: t, ...n }, r) => /* @__PURE__ */ o("input", {
 	type: t,
-	className: Q("flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50", e),
+	className: Q("flex w-full rounded-lg border border-[#D7DBDE] bg-white px-3 py-2 text-[13px] text-[#111] transition-colors placeholder:text-[#8A9096] file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-[#3168A9] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50", e),
 	ref: r,
 	...n
 }));
@@ -2117,7 +2120,7 @@ rn.displayName = "Input";
 //#region src/ui/label.tsx
 var an = e.forwardRef(({ className: e, ...t }, n) => /* @__PURE__ */ o(d.Root, {
 	ref: n,
-	className: Q("text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70", e),
+	className: Q("text-[11px] font-bold leading-none tracking-[0.12em] text-[#6B7075] peer-disabled:cursor-not-allowed peer-disabled:opacity-70", e),
 	...t
 }));
 an.displayName = d.Root.displayName;
@@ -2125,7 +2128,7 @@ an.displayName = d.Root.displayName;
 //#region src/ui/select.tsx
 var on = f.Root, sn = f.Group, cn = f.Value, ln = e.forwardRef(({ className: e, children: t, ...n }, r) => /* @__PURE__ */ s(f.Trigger, {
 	ref: r,
-	className: Q("flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1", e),
+	className: Q("flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-[#D7DBDE] bg-white px-3 py-2 text-[13px] text-[#111] ring-offset-background placeholder:text-[#8A9096] focus:border-[#3168A9] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1", e),
 	...n,
 	children: [t, /* @__PURE__ */ o(f.Icon, {
 		asChild: !0,
@@ -2464,10 +2467,10 @@ function Jn({ title: t, description: n, actions: r, breadcrumbs: i, className: a
 		}) : null, /* @__PURE__ */ s("div", {
 			className: "flex flex-wrap items-start justify-between gap-4",
 			children: [/* @__PURE__ */ s("div", { children: [/* @__PURE__ */ o("h1", {
-				className: "text-2xl font-bold tracking-tight",
+				className: "text-xl font-black tracking-tight",
 				children: t
 			}), n ? /* @__PURE__ */ o("p", {
-				className: "mt-1 text-sm text-muted-foreground",
+				className: "mt-1 text-[13px] text-[#5F6469]",
 				children: n
 			}) : null] }), r ? /* @__PURE__ */ o("div", {
 				className: "flex items-center gap-2",
@@ -2534,7 +2537,7 @@ function Zn({ page: e, totalPages: t, onChange: n, className: r }) {
 					children: "..."
 				}, `ellipsis-${r}`) : /* @__PURE__ */ o("button", {
 					onClick: () => n(t),
-					className: Q("h-9 w-9 rounded-md border text-sm transition-colors", t === e ? "border-primary bg-primary text-primary-foreground" : "hover:bg-muted"),
+					className: Q("size-9 rounded-lg border border-[#D7DBDE] text-[13px] font-bold transition-colors", t === e ? "border-black bg-black text-white" : "bg-white hover:bg-[#EDEFF1]"),
 					children: t
 				}, t))
 			}),
@@ -2556,14 +2559,14 @@ function Qn({ icon: e = Ot, title: t, description: n, action: r, className: i })
 		className: Q("flex flex-col items-center justify-center gap-3 py-12 text-center", i),
 		children: [
 			/* @__PURE__ */ o("div", {
-				className: "h-12 w-12 rounded-full bg-muted p-3 text-muted-foreground",
+				className: "h-12 w-12 rounded-full bg-[#EDEFF1] p-3 text-[#8A9096]",
 				children: /* @__PURE__ */ o(e, { className: "h-full w-full" })
 			}),
 			/* @__PURE__ */ s("div", { children: [/* @__PURE__ */ o("p", {
-				className: "text-base font-semibold",
+				className: "text-[15px] font-bold",
 				children: t
 			}), n && /* @__PURE__ */ o("p", {
-				className: "mx-auto mt-1 max-w-sm text-sm text-muted-foreground",
+				className: "mx-auto mt-1 max-w-sm text-[13px] text-[#5F6469]",
 				children: n
 			})] }),
 			r && /* @__PURE__ */ o("div", {
@@ -2651,24 +2654,24 @@ function tr({ title: e, value: t, icon: n, trend: r, description: i, footer: a, 
 			/* @__PURE__ */ s(ot, {
 				className: "flex flex-row items-center justify-between space-y-0",
 				children: [/* @__PURE__ */ o(st, {
-					className: "text-sm font-medium text-muted-foreground",
+					className: "text-[13px] font-bold text-[#6B7075]",
 					children: e
 				}), n && /* @__PURE__ */ o("div", {
-					className: "rounded-lg bg-primary/10 p-2 text-primary",
+					className: "rounded-lg bg-[#3168A9]/10 p-2 text-[#3168A9]",
 					children: /* @__PURE__ */ o(n, { className: "h-4 w-4" })
 				})]
 			}),
 			/* @__PURE__ */ s(lt, { children: [/* @__PURE__ */ s("div", {
 				className: "flex items-center gap-2",
 				children: [/* @__PURE__ */ o("span", {
-					className: "text-3xl font-bold tracking-tight",
+					className: "text-3xl font-black tracking-tight",
 					children: t
 				}), r && /* @__PURE__ */ s("span", {
 					className: Q("inline-flex items-center gap-0.5 rounded-full px-2 py-0.5 text-xs font-medium", r.positive ? "bg-success/10 text-success" : "bg-destructive/10 text-destructive"),
 					children: [r.positive ? /* @__PURE__ */ o(xt, { className: "h-3 w-3" }) : /* @__PURE__ */ o(bt, { className: "h-3 w-3" }), r.value]
 				})]
 			}), i && /* @__PURE__ */ o("p", {
-				className: "mt-1 text-sm text-muted-foreground",
+				className: "mt-1 text-[13px] text-[#5F6469]",
 				children: i
 			})] }),
 			a && /* @__PURE__ */ o(ut, {
@@ -2681,15 +2684,15 @@ function tr({ title: e, value: t, icon: n, trend: r, description: i, footer: a, 
 //#endregion
 //#region src/dashboard/status-badge.tsx
 var nr = {
-	success: "bg-success/15 text-success",
-	warning: "bg-warning/15 text-amber-700 dark:text-amber-300",
-	error: "bg-destructive/15 text-red-700 dark:text-red-300",
-	info: "bg-blue-500/15 text-blue-700 dark:text-blue-300",
-	neutral: "bg-muted text-muted-foreground"
+	success: "bg-[#06E785] text-[#00301B]",
+	warning: "bg-[#FFF3C4] text-[#6B4E00]",
+	error: "bg-[#FDE2E1] text-[#B42318]",
+	info: "bg-[#DFEBF8] text-[#27568C]",
+	neutral: "bg-[#EDEFF1] text-[#3D4145]"
 };
 function rr({ label: e, tone: t = "neutral", dot: n = !1, className: r }) {
 	return /* @__PURE__ */ s("span", {
-		className: Q("inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium", nr[t], r),
+		className: Q("inline-flex items-center gap-1.5 rounded-md px-2 py-0.5 text-[10px] font-black", nr[t], r),
 		children: [n && /* @__PURE__ */ o("span", { className: "h-1.5 w-1.5 rounded-full bg-current" }), e]
 	});
 }

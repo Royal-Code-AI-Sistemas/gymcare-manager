@@ -24,13 +24,13 @@ export function EmptyState({
         className,
       )}
     >
-      <div className="h-12 w-12 rounded-full bg-muted p-3 text-muted-foreground">
+      <div className="h-12 w-12 rounded-full bg-[#EDEFF1] p-3 text-[#8A9096]">
         <Icon className="h-full w-full" />
       </div>
       <div>
-        <p className="text-base font-semibold">{title}</p>
+        <p className="text-[15px] font-bold">{title}</p>
         {description && (
-          <p className="mx-auto mt-1 max-w-sm text-sm text-muted-foreground">
+          <p className="mx-auto mt-1 max-w-sm text-[13px] text-[#5F6469]">
             {description}
           </p>
         )}
