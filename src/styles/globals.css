@@ -1,6 +1,37 @@
 @import "tailwindcss";
 @source "../";
 
+/*
+| Tipografia da marca GymCare (Brand Guide v1.0, seção 03) — bundle direto na lib para que
+| todo painel que consumir @gymcare/ui ganhe a identidade sem configurar nada.
+|
+| Satoshi: fonte variável (font-weight 300 900), auto-hospedada — licença ITF Free Font
+| License (ver src/fonts/LICENSES.md). Space Mono: SIL Open Font License 1.1, pesos 400/700.
+*/
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Variable.woff2') format('woff2-variations');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/space-mono-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/space-mono-700.woff2') format('woff2');
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -34,65 +65,86 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
+/*
+| Tema GymCare Academy (Brand Guide v1.0 · Paleta de Cores + app.css do Academy).
+|
+| UMA cor de ação para o ecossistema: azul #3168a9 (academy-600). O roxo #8142e5 é a
+| família da conquista (skill, badge, certificado, pontos). Neutros e estados seguem os
+| tokens do Academy (ink/canvas/shell/line, ok/warn/err).
+*/
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: #8142e5;
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.94 0.01 285);
-  --accent-foreground: oklch(0.35 0.08 285);
-  --destructive: #ff4757;
-  --destructive-foreground: oklch(0.985 0 0);
-  --success: #00c896;
-  --success-foreground: #03281d;
-  --warning: #ffb800;
+  --background: #f8fafc; /* canvas */
+  --foreground: #0f172a; /* ink */
+  --card: #ffffff; /* surface */
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #3168a9; /* academy-600 — a cor da marca */
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9; /* shell */
+  --secondary-foreground: #334155; /* ink-soft */
+  --muted: #f1f5f9;
+  --muted-foreground: #475569; /* muted */
+  --accent: #8142e5; /* roxo da conquista */
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444; /* err */
+  --destructive-foreground: #ffffff;
+  --success: #06e785; /* ok — preenchimento */
+  --success-foreground: #03281d; /* texto sobre o preenchimento ok */
+  --warning: #d97706; /* warn */
   --warning-foreground: #3a2a00;
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: #8142e5;
-  --chart-1: #8142e5;
-  --chart-2: #00c896;
-  --chart-3: #ffb800;
-  --chart-4: #2563eb;
-  --chart-5: #ff4757;
+  --border: #e2e8f0; /* line */
+  --input: #cbd5e1; /* line-strong */
+  --ring: #3168a9;
+  --chart-1: #3168a9;
+  --chart-2: #8142e5;
+  --chart-3: #06e785;
+  --chart-4: #d97706;
+  --chart-5: #2563eb;
   --radius: 0.625rem;
 }
 
-.dark {
-  --background: oklch(0.145 0.02 285);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.18 0.02 285);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.18 0.02 285);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: #9d6bff;
-  --primary-foreground: oklch(0.2 0.07 285);
-  --secondary: oklch(0.24 0.015 285);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.24 0.015 285);
-  --muted-foreground: oklch(0.75 0.02 285);
-  --accent: oklch(0.3 0.06 285);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: #ff6b81;
-  --destructive-foreground: oklch(0.985 0 0);
-  --success: #00e8ae;
+/*
+| Dark mode — paleta escura do Academy (app.css, bloco [data-theme='dark']): superfícies
+| de ardósia e a rampa da marca SOBE de degrau (#4f8fd0 no escuro, 7.3:1 sobre a
+| superfície). Aceita `.dark` (padrão da lib) e `[data-theme='dark']` (padrão dos layouts
+| do Academy) para o mesmo seletor ligar o tema nos dois mundos.
+*/
+.dark,
+[data-theme='dark'] {
+  --background: #0f172a; /* canvas escuro */
+  --foreground: #f8fafc; /* ink claro */
+  --card: #1e293b; /* surface escuro */
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --primary: #4f8fd0; /* academy-600 no escuro — preenchimento */
+  --primary-foreground: #0f172a;
+  --secondary: #1e293b;
+  --secondary-foreground: #cbd5e1; /* ink-soft claro */
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8; /* muted escuro */
+  --accent: #9a63ea; /* accent escuro */
+  --accent-foreground: #0f172a;
+  --destructive: #f87171; /* err-deep escuro */
+  --destructive-foreground: #0f172a;
+  --success: #06e785; /* ok — não muda: nasce para fundo escuro */
   --success-foreground: #03281d;
-  --warning: #ffc933;
+  --warning: #fbbf24; /* warn-deep escuro */
   --warning-foreground: #3a2a00;
-  --border: oklch(0.3 0.015 285);
-  --input: oklch(0.3 0.015 285);
-  --ring: #9d6bff;
+  --border: #334155; /* line escuro */
+  --input: #475569; /* line-strong escuro */
+  --ring: #4f8fd0;
+  --chart-1: #4f8fd0;
+  --chart-2: #9a63ea;
+  --chart-3: #06e785;
+  --chart-4: #fbbf24;
+  --chart-5: #f87171;
 }
 
 @layer base {

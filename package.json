@@ -1,6 +1,6 @@
 {
   "name": "@gymcare/ui",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Design system de painéis web da Gymcare",
   "type": "module",
   "license": "UNLICENSED",
@@ -25,7 +25,7 @@
   "scripts": {
     "build": "npm run build:js && npm run build:css",
     "build:js": "vite build",
-    "build:css": "tailwindcss -i ./src/styles/globals.css -o ./dist/styles.css --minify",
+    "build:css": "tailwindcss -i ./src/styles/globals.css -o ./dist/styles.css --minify && node scripts/copy-fonts.mjs",
     "typecheck": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
