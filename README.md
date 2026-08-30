@@ -15,7 +15,7 @@ Local: `npm run storybook` (abre em http://localhost:6006)
 Dependência via git:
 
 ```json
-"@gymcare/ui": "git+ssh://git@github.com/Royal-Code-AI-Sistemas/gymcare-manager.git#v1.0.0"
+"@gymcare/ui": "git+ssh://git@github.com/Royal-Code-AI-Sistemas/gymcare-manager.git#v1.1.0"
 ```
 
 ```bash
@@ -40,7 +40,8 @@ export function Dashboard() {
 
 ## Dark mode
 
-A lib já vem com o tema escuro. Para ativar, adicione a classe `.dark` no `<html>`:
+A lib já vem com o tema escuro. Para ativar, adicione a classe `.dark` no `<html>` (ou o
+atributo `[data-theme='dark']`, padrão dos layouts do Academy):
 
 ```html
 <html class="dark">
@@ -63,4 +64,4 @@ npm run typecheck
 
 ## Publicação
 
-O `dist/` é commitado no repositório — os consumidores instalam a versão via tag git (ex.: `#v1.0.0`). O Storybook é publicado automaticamente no GitHub Pages a cada push na `main` (workflow em `.github/workflows/storybook.yml`).
+O `dist/` é commitado no repositório — os consumidores instalam a versão via tag git (ex.: `#v1.1.0`). O Storybook é publicado automaticamente no GitHub Pages a cada push na `main` (workflow em `.github/workflows/storybook.yml`).
