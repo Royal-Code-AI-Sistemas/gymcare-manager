@@ -73,4 +73,10 @@ npm run typecheck
 
 ## Publicação
 
-O `dist/` é commitado no repositório — os consumidores instalam a versão via tag git (ex.: `#v1.2.0`). O Storybook é publicado automaticamente no GitHub Pages a cada push na `main` (workflow em `.github/workflows/storybook.yml`).
+O `dist/` é commitado no repositório — os consumidores instalam a versão via tag git (ex.: `#v1.4.0`). O Storybook é publicado automaticamente no GitHub Pages a cada push na `main` (workflow em `.github/workflows/storybook.yml`).
+
+### Política de versionamento
+
+**Versões sobem DEVAGAR, em degraus pequenos (patch).** Cada mudança na lib incrementa o patch
+da versão atual (1.4.0 → 1.4.1 → 1.4.2 → …) — não pular para minor/major sem decisão explícita.
+A próxima versão a publicar é **1.4.2**.
