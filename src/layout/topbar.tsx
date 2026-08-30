@@ -1,51 +1,35 @@
 import * as React from 'react'
-import { Menu } from 'lucide-react'
 import { cn } from '../lib/utils'
-import { Button } from '../ui/button'
 
+/*
+| Barra do topo no design do CMS (GymCare Academy CMS v2.dc.html): crumb à esquerda, selo de
+| salvamento automático e as ações da tela. O selo só aparece onde a tela realmente salva
+| sozinha — anunciar "salvo" numa tela que exige clique seria mentir pro editor.
+*/
 export interface TopbarProps {
-  title?: string
-  subtitle?: string
+  crumb: string
+  saved?: string
   actions?: React.ReactNode
-  onMenuClick?: () => void
-  showMenu?: boolean
   className?: string
 }
 
-function Topbar({
-  title,
-  subtitle,
-  actions,
-  onMenuClick,
-  showMenu,
-  className,
-}: TopbarProps) {
+function Topbar({ crumb, saved, actions, className }: TopbarProps) {
   return (
-    <header
-      className={cn(
-        'sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background/95 px-4 backdrop-blur md:px-6',
-        className,
-      )}
-    >
-      {showMenu ? (
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={onMenuClick}
-          aria-label="Abrir menu"
-          className="md:hidden"
-        >
-          <Menu className="size-5" />
-        </Button>
-      ) : null}
-      <div className="min-w-0 flex-1">
-        {title ? <h1 className="truncate text-lg font-semibold">{title}</h1> : null}
-        {subtitle ? (
-          <p className="truncate text-sm text-muted-foreground">{subtitle}</p>
-        ) : null}
+    <div className={cn('flex min-w-0 items-center gap-5', className)}>
+      <div
+        style={{ flex: 1, minWidth: 0, fontSize: 13, fontWeight: 700 }}
+        className="text-[#5F6469] dark:text-[#9AA0A6]"
+      >
+        {crumb}
       </div>
-      {actions ? <div className="ml-auto flex items-center gap-2">{actions}</div> : null}
-    </header>
+      {saved ? (
+        <div className="flex items-center gap-1.5 rounded-full border border-[#E4E6E8] bg-white px-3 py-1.5 text-xs font-medium text-[#3D4145] dark:border-[#334155] dark:bg-[#1e293b] dark:text-[#cbd5e1]">
+          <span className="size-1.5 rounded-full bg-[#06E785]" />
+          {saved}
+        </div>
+      ) : null}
+      {actions ? <div className="flex items-center gap-2">{actions}</div> : null}
+    </div>
   )
 }
 

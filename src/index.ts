@@ -13,6 +13,7 @@ export * from './ui/skeleton'
 export * from './ui/table'
 export * from './ui/tabs'
 export * from './ui/tooltip'
+export * from './ui/gymcare-mark'
 
 export * from './layout/app-shell'
 export * from './layout/page-header'

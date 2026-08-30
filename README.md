@@ -15,7 +15,7 @@ Local: `npm run storybook` (abre em http://localhost:6006)
 Dependência via git:
 
 ```json
-"@gymcare/ui": "git+ssh://git@github.com/Royal-Code-AI-Sistemas/gymcare-manager.git#v1.1.0"
+"@gymcare/ui": "git+ssh://git@github.com/Royal-Code-AI-Sistemas/gymcare-manager.git#v1.2.0"
 ```
 
 ```bash
@@ -26,13 +26,22 @@ npm install
 
 ```tsx
 import '@gymcare/ui/styles.css'
-import { AppShell, Button, StatCard, DataTable } from '@gymcare/ui'
+import { AppShell, Topbar, StatCard, type NavGroup } from '@gymcare/ui'
+
+const groups: NavGroup[] = [
+  { title: 'GERAL', items: [{ label: 'Início', href: '/', active: true }] },
+  { title: 'OPERAÇÃO', items: [{ label: 'Alunos', href: '/alunos' }] },
+]
 
 export function Dashboard() {
   return (
-    <AppShell items={[{ label: 'Início', href: '/', active: true }]}>
+    <AppShell
+      groups={groups}
+      brandTitle="GYMCARE"
+      brandSubtitle="ACADEMY · PANEL"
+      topbar={<Topbar crumb="Início" />}
+    >
       <StatCard title="Receita" value="R$ 45.200" />
-      <Button>Novo registro</Button>
     </AppShell>
   )
 }
@@ -64,4 +73,4 @@ npm run typecheck
 
 ## Publicação
 
-O `dist/` é commitado no repositório — os consumidores instalam a versão via tag git (ex.: `#v1.1.0`). O Storybook é publicado automaticamente no GitHub Pages a cada push na `main` (workflow em `.github/workflows/storybook.yml`).
+O `dist/` é commitado no repositório — os consumidores instalam a versão via tag git (ex.: `#v1.2.0`). O Storybook é publicado automaticamente no GitHub Pages a cada push na `main` (workflow em `.github/workflows/storybook.yml`).

@@ -30,16 +30,25 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: () => (
     <AppShell
-      items={[
-        { label: 'Dashboard', icon: LayoutDashboard, href: '#', active: true },
-        { label: 'Alunos', icon: Users, href: '#' },
-        { label: 'Planos', icon: CreditCard, href: '#', badge: '4' },
+      groups={[
+        {
+          title: 'GERAL',
+          items: [{ label: 'Dashboard', icon: LayoutDashboard, href: '#', active: true }],
+        },
+        {
+          title: 'OPERAÇÃO',
+          items: [
+            { label: 'Alunos', icon: Users, href: '#' },
+            { label: 'Planos', icon: CreditCard, href: '#', badge: '4' },
+          ],
+        },
       ]}
-      sidebarHeader={<div className="px-4 py-4 text-lg font-bold">GymCare</div>}
+      brandTitle="GYMCARE"
+      brandSubtitle="ACADEMY · PANEL"
       topbar={
         <Topbar
-          title="Dashboard"
-          subtitle="Visão geral da sua academia"
+          crumb="Dashboard"
+          saved="Salvo automaticamente"
           actions={
             <>
               <StatusBadge label="Sistema operacional" tone="success" dot />
